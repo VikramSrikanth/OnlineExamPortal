@@ -54,7 +54,32 @@ namespace ClassLibAndJWT.Controllers
             return BadRequest("unable to Remove");
 
         }
-           
+
+        //[HttpPost("update")]
+        //public IActionResult Update([FromBody] UserTable user)
+        //{
+        //    var item = _context.Users.FirstOrDefault(x => x.UserId == user.UserId);
+        //    if (item != null)
+        //    {
+        //        if (!string.IsNullOrWhiteSpace(user.Name))
+        //            item.Name = user.Name;
+        //        if (!string.IsNullOrWhiteSpace(user.Email))
+        //            item.Email = user.Email;
+        //        if (!string.IsNullOrWhiteSpace(user.Password))
+        //            item.Password = user.Password;
+        //        if(!string.IsNullOrWhiteSpace(user.RollType))
+        //            item.RollType = user.RollType;
+
+        //        item.RegistrationDate = user.RegistrationDate;
+
+        //        _context.Users.Update(item);
+        //        _context.SaveChanges();
+        //        return Ok("Updated Successfully");
+        //    }
+        //    return BadRequest("unable to update");
+
+        //}
+
         //private bool CompareWithDb(string username, string password)
         //{
         //    var Name = _context.Users.FirstOrDefault(u => u.Name==username && u.Password==password);
@@ -62,7 +87,7 @@ namespace ClassLibAndJWT.Controllers
         //        return true;
         //    return false;
         //}
-        
+
         [HttpGet("Details")]
         public IActionResult GetDetails()
         {
