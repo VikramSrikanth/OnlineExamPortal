@@ -41,8 +41,19 @@ namespace ClassLibAndJWT.Controllers
             }
             return BadRequest("Enter all details");
         }
+        [HttpPost("delete")]
+        public IActionResult Edit([FromForm] int Id)
+        {
+            var item = _context.Users.FirstOrDefault(x =>x.UserId == Id);
+            if (item != null)
+            {
+                _context.Users.Remove(item);
+                _context.SaveChanges();
+                return Ok("Removed Successfully");
+            }
+            return BadRequest("unable to Remove");
 
-
+        }
            
         //private bool CompareWithDb(string username, string password)
         //{
